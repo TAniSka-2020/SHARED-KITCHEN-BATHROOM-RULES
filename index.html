@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shared Kitchen & Bathroom Rules</title>
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0a1f14;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #164228 0%, #0a1f14 85%);
+      --card-bg: #ffffff;
+      --gold-primary: #d4af37;
+      --gold-light: #f5e8be;
+      --gold-dark: #a17f1a;
+      --text-dark: #1f2937;
+      --text-muted: #4b5563;
+      --border-color: #e5e7eb;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      --danger-text: #b91c1c;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-dark);
+      background-image: var(--bg-gradient);
+      color: var(--text-dark);
+      min-height: 100vh;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem 3rem 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* Top Notice Bar */
+    .top-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 0.4rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 1.5rem 0.5rem 2rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.75rem, 5vw, 2.6rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      margin-bottom: 0.75rem;
+    }
+
+    .main-title span {
+      background: linear-gradient(135deg, #ffffff 20%, var(--gold-light) 60%, var(--gold-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: #d1d5db;
+      max-width: 620px;
+      margin: 0 auto 1.75rem auto;
+      font-weight: 300;
+    }
+
+    /* Language Bar */
+    .lang-container {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 0.75rem 1.25rem;
+      border-radius: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 540px;
+    }
+
+    .lang-label {
+      color: var(--gold-light);
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .select-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .lang-select {
+      width: 100%;
+      background: #ffffff;
+      color: #111827;
+      border: 2px solid var(--gold-primary);
+      padding: 0.65rem 2.25rem 0.65rem 1rem;
+      border-radius: 0.625rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      appearance: none;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .lang-select:focus {
+      border-color: #ffd700;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
+    }
+
+    .select-arrow {
+      position: absolute;
+      right: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--gold-dark);
+      font-size: 0.85rem;
+    }
+
+    /* Actions bar (QR modal, print) */
+    .utility-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f3f4f6;
+      padding: 0.45rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.825rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: var(--gold-light);
+      color: #fff;
+    }
+
+    /* Rules Stack */
+    .rules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Rule Card */
+    .rule-card {
+      background: var(--card-bg);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .rule-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+    }
+
+    .rule-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 30px -8px rgba(0, 0, 0, 0.35);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card-icon-wrap {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      border-radius: 0.875rem;
+      background: #fdf8e6;
+      border: 1px solid var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.15);
+    }
+
+    .card-title-group {
+      flex: 1;
+    }
+
+    .rule-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-dark);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-title {
+      font-size: clamp(1.2rem, 3.5vw, 1.45rem);
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.3;
+    }
+
+    .rule-content {
+      font-size: 1rem;
+      color: #374151;
+      padding-left: 0.25rem;
+    }
+
+    .lead-text {
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+      color: #1f2937;
+    }
+
+    .rule-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .rule-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      line-height: 1.5;
+    }
+
+    .rule-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #15803d;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .neg-list li::before {
+      content: "✕";
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    /* Highlight Banner Callouts */
+    .banner-highlight {
+      background: #fefce8;
+      border-left: 5px solid var(--gold-primary);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+      font-weight: 600;
+      color: #854d0e;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .danger-highlight {
+      background: var(--danger-bg);
+      border: 1px solid var(--danger-border);
+      border-left: 5px solid #dc2626;
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+      color: var(--danger-text);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .strong-chip {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.35rem;
+      font-weight: 800;
+      display: inline-block;
+      border: 1px solid #f87171;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3.5rem;
+      padding: 2.5rem 1.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 1.5rem;
+      width: 100%;
+    }
+
+    .footer-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.2rem, 3.2vw, 1.5rem);
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-sub {
+      color: #e5e7eb;
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto 1.25rem auto;
+      font-weight: 400;
+    }
+
+    .footer-quote {
+      font-style: italic;
+      color: var(--gold-primary);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* QR Code Modal for accommodation owners */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 1.25rem;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      background: #f3f4f6;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4b5563;
+    }
+
+    .qr-canvas-container {
+      background: #f9fafb;
+      border: 2px dashed #d1d5db;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin: 1.25rem auto;
+      display: inline-block;
+    }
+
+    .modal-input {
+      width: 100%;
+      padding: 0.6rem 0.85rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-btn {
+      background: #164228;
+      color: #ffffff;
+      border: none;
+      padding: 0.7rem 1.4rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+    }
+
+    .modal-btn:hover {
+      background: #0f2b1d;
+    }
+
+    /* Print view styling for physical laminated poster */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0;
+      }
+
+      .lang-container, .utility-bar, .modal-backdrop {
+        display: none !important;
+      }
+
+      .top-badge {
+        color: #000 !important;
+        border-color: #000 !important;
+        background: none !important;
+      }
+
+      .main-title, .main-title span {
+        color: #000 !important;
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+      }
+
+      .subtitle {
+        color: #444 !important;
+      }
+
+      .rule-card {
+        box-shadow: none !important;
+        border: 1px solid #333 !important;
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+      }
+
+      .rule-card::before {
+        background: #000 !important;
+      }
+
+      footer {
+        background: none !important;
+        border-top: 1px solid #000 !important;
+        color: #000 !important;
+      }
+
+      .footer-title, .footer-quote, .footer-sub {
+        color: #000 !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .card-header {
+        gap: 0.85rem;
+      }
+      .card-icon-wrap {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        font-size: 1.35rem;
+      }
+      .rule-card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header Section -->
+    <header>
+      <div class="top-badge" id="top-badge">
+        <span>⚠</span> <span data-i18n="badge">ATTENTION PLEASE</span>
+      </div>
+      <h1 class="main-title" id="main-title">
+        <span data-i18n="title">SHARED KITCHEN &amp; BATHROOM RULES</span>
+      </h1>
+      <p class="subtitle" data-i18n="subtitle">
+        Please follow these simple rules to keep our shared spaces clean, hygienic, and comfortable for everyone.
+      </p>
+
+      <!-- Language Selector -->
+      <div class="lang-container">
+        <label for="languageSelect" class="lang-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span data-i18n="selectLanguageLabel">Language / Idioma:</span>
+        </label>
+        <div class="select-wrapper">
+        <select id="languageSelect" class="lang-select" aria-label="Select Language">
+          <option value="en" selected>English (Default)</option>
+          <option value="es">Español (Spanish)</option>
+          <option value="es_CO">Español colombiano (Colombian)</option>
+          <option value="bn">বাংলা (Bengali)</option>
+          <option value="hi">हिन्दी (Hindi)</option>
+          <option value="ml">മലയാളം (Malayalam)</option>
+          <option value="uk">Українська (Ukrainian)</option>
+          <option value="pl">Polski (Polish)</option>
+          <option value="fil">Tagalog / Filipino</option>
+        </select>
+        <span class="select-arrow">▼</span>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Rules Content Section -->
+  <main class="rules-list">
+
+    <!-- RULE 1 -->
+      <article class="rule-card">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">🍳</div>
+          <div class="card-title-group">
+            <span class="rule-tag" data-i18n="r1_tag">RULE 1</span>
+            <h2 class="card-title" data-i18n="r1_title">KEEP THE KITCHEN CLEAN</h2>
+          </div>
+        </div>
+        <div class="rule-content">
+          <p class="lead-text" data-i18n="r1_lead">Keep the kitchen clean and tidy at all times.</p>
+          <p style="font-weight: 600; margin-bottom: 0.5rem;" data-i18n="r1_sublead">Immediately after finishing cooking:</p>
+          <ul class="rule-list">
+            <li data-i18n="r1_p1">Clean the kitchen countertop.</li>
+            <li data-i18n="r1_p2">Clean the stove.</li>
+            <li data-i18n="r1_p3">Clean all surfaces you have used.</li>
+            <li data-i18n="r1_p4">Wash your dishes.</li>
+            <li data-i18n="r1_p5">Put everything back in its proper place.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- RULE 2 -->
+      <article class="rule-card">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">🧊</div>
+          <div class="card-title-group">
+            <span class="rule-tag" data-i18n="r2_tag">RULE 2</span>
+            <h2 class="card-title" data-i18n="r2_title">USE ONLY ONE REFRIGERATOR</h2>
+          </div>
+        </div>
+        <div class="rule-content">
+          <div class="danger-highlight">
+            <span style="font-size: 1.25rem;">⚠️</span>
+            <span data-i18n="r2_important">This is a VERY IMPORTANT RULE.</span>
+          </div>
+          <p class="lead-text" data-i18n="r2_lead">
+            Each person is allowed to use <span class="strong-chip">ONLY ONE REFRIGERATOR</span> for storing their personal food and belongings.
+          </p>
+          <ul class="rule-list">
+            <li data-i18n="r2_p1">You must choose ONE refrigerator.</li>
+            <li data-i18n="r2_p2">Keep all your food and personal items in that one refrigerator.</li>
+            <li data-i18n="r2_p3">Do NOT store your belongings in two or more refrigerators.</li>
+            <li data-i18n="r2_p4">Do NOT occupy space in multiple refrigerators.</li>
+            <li data-i18n="r2_p5">Leave enough space for other residents.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- RULE 3 -->
+      <article class="rule-card">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">🚿</div>
+          <div class="card-title-group">
+            <span class="rule-tag" data-i18n="r3_tag">RULE 3</span>
+            <h2 class="card-title" data-i18n="r3_title">FLUSH THE TOILET AFTER EVERY USE</h2>
+          </div>
+        </div>
+        <div class="rule-content">
+          <div class="banner-highlight">
+            <span>🚽</span>
+            <span data-i18n="r3_highlight">FLUSH THE TOILET AFTER EVERY USE.</span>
+          </div>
+          <ul class="rule-list">
+            <li data-i18n="r3_p1">Always flush the toilet after every use.</li>
+            <li data-i18n="r3_p2">Leave the bathroom clean and hygienic for the next person.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- RULE 4 -->
+      <article class="rule-card">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">🤝</div>
+          <div class="card-title-group">
+            <span class="rule-tag" data-i18n="r4_tag">RULE 4</span>
+            <h2 class="card-title" data-i18n="r4_title">RESPECT SHARED SPACES</h2>
+          </div>
+        </div>
+        <div class="rule-content">
+          <ul class="rule-list neg-list">
+            <li data-i18n="r4_p1">Do not leave dirty dishes.</li>
+            <li data-i18n="r4_p2">Do not leave food waste.</li>
+            <li data-i18n="r4_p3">Do not leave personal belongings in common areas.</li>
+          </ul>
+          <ul class="rule-list" style="margin-top: 0.5rem;">
+            <li data-i18n="r4_p4">Always clean up after yourself.</li>
+            <li data-i18n="r4_p5">Respect other residents.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- RULE 5 -->
+      <article class="rule-card">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">✨</div>
+          <div class="card-title-group">
+            <span class="rule-tag" data-i18n="r5_tag">RULE 5</span>
+            <h2 class="card-title" data-i18n="r5_title">BE RESPONSIBLE</h2>
+          </div>
+        </div>
+        <div class="rule-content">
+          <p class="lead-text" data-i18n="r5_p1">These facilities are shared by everyone.</p>
+          <div class="banner-highlight" style="background:#f0fdf4; border-color:#22c55e; color:#15803d;">
+            <span>🌱</span>
+            <span data-i18n="r5_p2">Your cooperation is essential to maintaining a clean, organized, and comfortable living environment.</span>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <h3 class="footer-title" data-i18n="ft_title">THANK YOU FOR YOUR COOPERATION!</h3>
+      <p class="footer-sub" data-i18n="ft_sub">Please respect these rules and consider the comfort of others.</p>
+      <p class="footer-quote" data-i18n="ft_quote">"A little care makes shared living better."</p>
+    </footer>
+
+  </div>
+
+  <!-- Comprehensive Translation Dictionary -->
+  <script>
+    const translations = {
+      en: {
+        badge: "ATTENTION PLEASE",
+        title: "SHARED KITCHEN & BATHROOM RULES",
+        subtitle: "Please follow these simple rules to keep our shared spaces clean, hygienic, and comfortable for everyone.",
+        selectLanguageLabel: "Language:",
+        r1_tag: "RULE 1",
+        r1_title: "KEEP THE KITCHEN CLEAN",
+        r1_lead: "Keep the kitchen clean and tidy at all times.",
+        r1_sublead: "Immediately after finishing cooking:",
+        r1_p1: "Clean the kitchen countertop.",
+        r1_p2: "Clean the stove.",
+        r1_p3: "Clean all surfaces you have used.",
+        r1_p4: "Wash your dishes.",
+        r1_p5: "Put everything back in its proper place.",
+        r2_tag: "RULE 2",
+        r2_title: "USE ONLY ONE REFRIGERATOR",
+        r2_important: "This is a VERY IMPORTANT RULE.",
+        r2_lead: "Each person is allowed to use ONLY ONE REFRIGERATOR for storing their personal food and belongings.",
+        r2_p1: "You must choose ONE refrigerator.",
+        r2_p2: "Keep all your food and personal items in that one refrigerator.",
+        r2_p3: "Do NOT store your belongings in two or more refrigerators.",
+        r2_p4: "Do NOT occupy space in multiple refrigerators.",
+        r2_p5: "Leave enough space for other residents.",
+        r3_tag: "RULE 3",
+        r3_title: "FLUSH THE TOILET AFTER EVERY USE",
+        r3_highlight: "FLUSH THE TOILET AFTER EVERY USE.",
+        r3_p1: "Always flush the toilet after every use.",
+        r3_p2: "Leave the bathroom clean and hygienic for the next person.",
+        r4_tag: "RULE 4",
+        r4_title: "RESPECT SHARED SPACES",
+        r4_p1: "Do not leave dirty dishes.",
+        r4_p2: "Do not leave food waste.",
+        r4_p3: "Do not leave personal belongings in common areas.",
+        r4_p4: "Always clean up after yourself.",
+        r4_p5: "Respect other residents.",
+        r5_tag: "RULE 5",
+        r5_title: "BE RESPONSIBLE",
+        r5_p1: "These facilities are shared by everyone.",
+        r5_p2: "Your cooperation is essential to maintaining a clean, organized, and comfortable living environment.",
+        ft_title: "THANK YOU FOR YOUR COOPERATION!",
+        ft_sub: "Please respect these rules and consider the comfort of others.",
+        ft_quote: "“A little care makes shared living better.”"
+      },
+      es: {
+        badge: "ATENCIÓN POR FAVOR",
+        title: "NORMAS DE LA COCINA Y EL BAÑO COMPARTIDOS",
+        subtitle: "Por favor, siga estas sencillas normas para mantener nuestras áreas compartidas limpias, higiénicas y agradables para todos.",
+        selectLanguageLabel: "Idioma:",
+        r1_tag: "REGLA 1",
+        r1_title: "MANTENGA LA COCINA LIMPIA",
+        r1_lead: "Mantenga la cocina limpia y ordenada en todo momento.",
+        r1_sublead: "Inmediatamente después de cocinar:",
+        r1_p1: "Limpie la encimera de la cocina.",
+        r1_p2: "Limpie los fogones y la estufa.",
+        r1_p3: "Limpie todas las superficies que haya utilizado.",
+        r1_p4: "Lave sus platos y utensilios.",
+        r1_p5: "Guarde todo en su lugar correspondiente.",
+        r2_tag: "REGLA 2",
+        r2_title: "USE SOLO UN REFRIGERADOR",
+        r2_important: "Esta es una REGLA MUY IMPORTANTE.",
+        r2_lead: "Cada persona tiene permitido utilizar SOLO UN REFRIGERADOR para almacenar sus alimentos y artículos personales.",
+        r2_p1: "Debe elegir UN solo refrigerador.",
+        r2_p2: "Guarde toda su comida y pertenencias en ese único refrigerador.",
+        r2_p3: "NO guarde sus pertenencias en dos o más refrigeradores.",
+        r2_p4: "NO ocupe espacio en múltiples refrigeradores.",
+        r2_p5: "Deje suficiente espacio para los demás compañeros.",
+        r3_tag: "REGLA 3",
+        r3_title: "TIRE DE LA CADENA DESPUÉS DE CADA USO",
+        r3_highlight: "TIRE DE LA CADENA DEL INODORO DESPUÉS DE CADA USO.",
+        r3_p1: "Siempre descargue el inodoro después de usarlo.",
+        r3_p2: "Deje el baño limpio e higiénico para la siguiente persona.",
+        r4_tag: "REGLA 4",
+        r4_title: "RESPETE LOS ESPACIOS COMPARTIDOS",
+        r4_p1: "No deje platos ni cubiertos sucios.",
+        r4_p2: "No deje restos ni desperdicios de comida.",
+        r4_p3: "No deje objetos personales en las zonas comunes.",
+        r4_p4: "Limpie siempre lo que ensucie después de usarlo.",
+        r4_p5: "Respete a los demás compañeros de vivienda.",
+        r5_tag: "REGLA 5",
+        r5_title: "SEA RESPONSABLE",
+        r5_p1: "Estas instalaciones son compartidas por todos.",
+        r5_p2: "Su colaboración es fundamental para mantener un ambiente limpio, ordenado y agradable para convivir.",
+        ft_title: "¡GRACIAS POR SU COLABORACIÓN!",
+        ft_sub: "Por favor respete estas normas y tenga en cuenta el bienestar de los demás.",
+        ft_quote: "“Un pequeño gesto de cuidado hace que la convivencia sea mucho mejor.”"
+      },
+      es_CO: {
+        badge: "ATENCIÓN POR FAVOR",
+        title: "NORMAS DE COCINA Y BAÑO COMPARTIDOS",
+        subtitle: "Por favor tengamos en cuenta estas normas básicas para mantener los espacios comunes limpios, aseados y cómodos para todos.",
+        selectLanguageLabel: "Idioma:",
+        r1_tag: "NORMA 1",
+        r1_title: "MANTENER LA COCINA LIMPIA",
+        r1_lead: "Mantener la cocina limpia y organizada en todo momento.",
+        r1_sublead: "Apenas termine de cocinar:",
+        r1_p1: "Limpiar el mesón de la cocina.",
+        r1_p2: "Limpiar la estufa.",
+        r1_p3: "Limpiar todas las superficies que utilizó.",
+        r1_p4: "Lavar la loza y ollas usadas.",
+        r1_p5: "Guardar cada cosa en su puesto.",
+        r2_tag: "NORMA 2",
+        r2_title: "USAR SOLO UNA NEVERA",
+        r2_important: "Esta es una REGLA MUY IMPORTANTE.",
+        r2_lead: "Cada persona solo puede usar UNA SOLA NEVERA para guardar su comida y artículos personales.",
+        r2_p1: "Debe escoger UNA SOLA nevera.",
+        r2_p2: "Guarde todos sus alimentos y cositas personales en esa única nevera.",
+        r2_p3: "NO guarde sus cosas en dos o más neveras.",
+        r2_p4: "NO ocupe espacio en varias neveras a la vez.",
+        r2_p5: "Deje espacio suficiente para los demás compañeros.",
+        r3_tag: "NORMA 3",
+        r3_title: "BAJAR LA CISTERNA TRAS CADA USO",
+        r3_highlight: "BAJAR LA CISTERNA DEL INODORO DESPUÉS DE CADA USO.",
+        r3_p1: "Siempre vaciar el inodoro después de utilizarlo.",
+        r3_p2: "Dejar el baño bien limpio y aseado para la siguiente persona.",
+        r4_tag: "NORMA 4",
+        r4_title: "RESPETAR LAS ZONAS COMUNES",
+        r4_p1: "No dejar loza sucia en el lavaplatos.",
+        r4_p2: "No dejar sobras ni residuos de comida.",
+        r4_p3: "No dejar pertenencias personales en las zonas comunes.",
+        r4_p4: "Asear siempre lo que ensucie.",
+        r4_p5: "Tener respeto y consideración con los demás compañeros.",
+        r5_tag: "NORMA 5",
+        r5_title: "SER RESPONSABLE Y CONSCIENTE",
+        r5_p1: "Estos espacios e instalaciones son de uso común para todos.",
+        r5_p2: "Su apoyo y colaboración son indispensables para mantener una convivencia tranquila, limpia y ordenada.",
+        ft_title: "¡MUCHAS GRACIAS POR SU COLABORACIÓN!",
+        ft_sub: "Respetemos las normas y pensemos en la comodidad de todos.",
+        ft_quote: "“La convivencia mejora cuando todos ponemos de nuestra parte.”"
+      },
+      bn: {
+        badge: "বিশেষ দৃষ্টি আকর্ষণ",
+        title: "শেয়ার্ড রান্নাঘর এবং বাথরুমের নিয়মাবলী",
+        subtitle: "আমাদের শেয়ার্ড জায়গাগুলো পরিষ্কার, স্বাস্থ্যকর এবং সবার জন্য আরামদায়ক রাখতে অনুগ্রহ করে এই সহজ নিয়মগুলো মেনে চলুন।",
+        selectLanguageLabel: "ভাষা নির্বাচন করুন:",
+        r1_tag: "নিয়ম ১",
+        r1_title: "রান্নাঘর পরিষ্কার রাখুন",
+        r1_lead: "রান্নাঘর সবসময় পরিষ্কার এবং পরিপাটি রাখুন।",
+        r1_sublead: "রান্না শেষ করার সাথে সাথে:",
+        r1_p1: "রান্নাঘরের কাউন্টারটপ বা স্ল্যাব ভালো করে মুছুন।",
+        r1_p2: "চুলা পরিষ্কার করুন।",
+        r1_p3: "আপনার ব্যবহৃত সমস্ত জায়গা পরিষ্কার করুন।",
+        r1_p4: "আপনার থালা-বাসন ধুয়ে ফেলুন।",
+        r1_p5: "সবকিছু নির্দিষ্ট স্থানে গুছিয়ে রাখুন।",
+        r2_tag: "নিয়ম ২",
+        r2_title: "শুধুমাত্র একটি রেফ্রিজারেটর ব্যবহার করুন",
+        r2_important: "এটি একটি অত্যন্ত গুরুত্বপূর্ণ নিয়ম।",
+        r2_lead: "প্রত্যেক ব্যক্তি নিজের ব্যক্তিগত খাবার এবং জিনিসপত্র রাখার জন্য শুধুমাত্র একটি রেফ্রিজারেটর ব্যবহার করতে পারবেন।",
+        r2_p1: "আপনাকে অবশ্যই যেকোনো একটি রেফ্রিজারেটর বেছে নিতে হবে।",
+        r2_p2: "আপনার সমস্ত খাবার এবং জিনিসপত্র সেই একটি রেফ্রিজারেটরেই রাখুন।",
+        r2_p3: "দুই বা ততোধিক রেফ্রিজারেটরে জিনিস রাখবেন না।",
+        r2_p4: "একাধিক ফ্রিজে জায়গা দখল করবেন না।",
+        r2_p5: "অন্যান্য বাসিন্দাদের ব্যবহারের জন্য পর্যাপ্ত জায়গা রাখুন।",
+        r3_tag: "নিয়ম ৩",
+        r3_title: "প্রতিবার ব্যবহারের পর টয়লেট ফ্লাশ করুন",
+        r3_highlight: "প্রতিবার ব্যবহারের পর অবশ্যই টয়লেট ফ্লাশ করবেন।",
+        r3_p1: "ব্যবহার শেষ হলেই সবসময় টয়লেটে পানি ঢালুন বা ফ্লাশ করুন।",
+        r3_p2: "পরবর্তী ব্যক্তির জন্য বাথরুমটি পরিষ্কার এবং স্বাস্থ্যকর অবস্থায় রেখে যান।",
+        r4_tag: "নিয়ম ৪",
+        r4_title: "শেয়ার্ড স্থানগুলোকে সম্মান করুন",
+        r4_p1: "নোংরা থালা-বাসন ফেলে রাখবেন না।",
+        r4_p2: "উচ্ছিষ্ট বা বাসি খাবারের অপচয় ফেলে রাখবেন না।",
+        r4_p3: "কমন জায়গায় ব্যক্তিগত জিনিস ফেলে রাখবেন না।",
+        r4_p4: "ব্যবহারের পর নিজের জায়গা নিজে পরিষ্কার করুন।",
+        r4_p5: "অন্যান্য বাসিন্দাদের প্রতি সম্মান প্রদর্শন করুন।",
+        r5_tag: "নিয়ম ৫",
+        r5_title: "দায়িত্বশীল হোন",
+        r5_p1: "এই সুবিধাগুলো সবাই মিলে ভাগাভাগি করে ব্যবহার করে।",
+        r5_p2: "একটি সুন্দর, সুশৃঙ্খল এবং স্বাস্থ্যকর পরিবেশ বজায় রাখতে আপনার সহযোগিতা একান্ত কাম্য।",
+        ft_title: "আপনার সহযোগিতার জন্য ধন্যবাদ!",
+        ft_sub: "অনুগ্রহ করে নিয়মগুলো মেনে চলুন এবং অন্যের স্বাচ্ছন্দ্যের কথা বিবেচনা করুন।",
+        ft_quote: "“একটু সচেতনতাই আমাদের একত্র বসবাসকে সুন্দর করে তোলে।”"
+      },
+      hi: {
+        badge: "कृपया ध्यान दें",
+        title: "साझा रसोई और बाथरूम के नियम",
+        subtitle: "हम सभी के लिए इस साझा स्थान को स्वच्छ, स्वच्छतापू्र्ण और आरामदायक बनाए रखने हेतु कृपया इन नियमों का पालन करें।",
+        selectLanguageLabel: "भाषा चुनें:",
+        r1_tag: "नियम १",
+        r1_title: "रसोई को हमेशा साफ रखें",
+        r1_lead: "रसोई को हर समय साफ और व्यवस्थित रखें।",
+        r1_sublead: "खाना पकाने के तुरंत बाद:",
+        r1_p1: "रसोई का काउंटरटॉप (स्लैब) साफ करें।",
+        r1_p2: "गैस चूल्हा अच्छी तरह साफ करें।",
+        r1_p3: "उपयोग की गई सभी सतहों को पोंछें।",
+        r1_p4: "अपने बर्तन तुरंत धोएं।",
+        r1_p5: "सभी सामान को उनके सही स्थान पर वापस रखें।",
+        r2_tag: "नियम २",
+        r2_title: "केवल एक ही रेफ्रिजरेटर (फ्रिज) का उपयोग करें",
+        r2_important: "यह एक बहुत ही महत्वपूर्ण नियम है।",
+        r2_lead: "प्रत्येक व्यक्ति को अपना व्यक्तिगत भोजन रखने के लिए केवल एक रेफ्रिजरेटर का उपयोग करने की अनुमति है।",
+        r2_p1: "आपको केवल एक फ्रिज का चयन करना होगा।",
+        r2_p2: "अपना सारा भोजन और निजी सामान उसी एक फ्रिज में रखें।",
+        r2_p3: "दो या अधिक रेफ्रिजरेटर में अपना सामान न रखें।",
+        r2_p4: "एक से अधिक फ्रिज में जगह न घेरें।",
+        r2_p5: "अन्य साथियों के लिए पर्याप्त जगह छोड़ें।",
+        r3_tag: "नियम ३",
+        r3_title: "प्रत्येक उपयोग के बाद शौचालय को फ्लश करें",
+        r3_highlight: "प्रत्येक उपयोग के बाद टॉयलेट फ्लश अवश्य करें।",
+        r3_p1: "शौचालय का उपयोग करने के बाद हमेशा फ्लश करें।",
+        r3_p2: "अगले व्यक्ति के लिए बाथरूम को साफ और स्वच्छ छोड़ें।",
+        r4_tag: "नियम ४",
+        r4_title: "साझा स्थान का सम्मान करें",
+        r4_p1: "गंदे बर्तन सिंक या बाहर न छोड़ें।",
+        r4_p2: "खाने का कचरा या जूठन न फैलाएं।",
+        r4_p3: "साझा स्थानों में अपना निजी सामान न छोड़ें।",
+        r4_p4: "काम पूरा होने के बाद हमेशा अपने पीछे सफाई करें।",
+        r4_p5: "अन्य रहने वालों का आदर और सम्मान करें।",
+        r5_tag: "नियम ५",
+        r5_title: "जिम्मेदार बनें",
+        r5_p1: "ये सुविधाएं सभी के द्वारा साझा की जाती हैं।",
+        r5_p2: "स्वच्छ, सुव्यवस्थित और आरामदायक वातावरण बनाए रखने के लिए आपका सहयोग अनिवार्य है।",
+        ft_title: "आपके सहयोग के लिए धन्यवाद!",
+        ft_sub: "कृपया इन नियमों का सम्मान करें और दूसरों की सुविधा का ध्यान रखें।",
+        ft_quote: "“थोड़ी सी सावधानी साझा जीवन को बेहतर बनाती है।”"
+      },
+      ml: {
+        badge: "ദയവായി ശ്രദ്ധിക്കുക",
+        title: "ഷെയർ ചെയ്ത അടുക്കളയും ബാത്ത്റൂമും ഉപയോഗിക്കുന്നതിനുള്ള നിയമങ്ങൾ",
+        subtitle: "നമ്മുടെ പൊതു ഇടങ്ങൾ വൃത്തിയോടെയും ശുചിത്വത്തോടെയും നിലനിർത്താൻ ദയവായി ഈ ലളിതമായ നിയമങ്ങൾ പാലിക്കുക.",
+        selectLanguageLabel: "ഭാഷ തിരഞ്ഞെടുക്കുക:",
+        r1_tag: "നിയമം 1",
+        r1_title: "അടുക്കള എപ്പോഴും വൃത്തിയായി സൂക്ഷിക്കുക",
+        r1_lead: "അടുക്കള എപ്പോഴും വൃത്തിയായും ചിട്ടയായും സൂക്ഷിക്കുക.",
+        r1_sublead: "പാചകം പൂർത്തിയായ ഉടൻ തന്നെ:",
+        r1_p1: "അടുക്കളയിലെ കൗണ്ടർടോപ്പ് വൃത്തിയാക്കുക.",
+        r1_p2: "സ്റ്റൗവ് നന്നായി തുടച്ചു വൃത്തിയാക്കുക.",
+        r1_p3: "നിങ്ങൾ ഉപയോഗിച്ച എല്ലാ പ്രതലങ്ങളും വൃത്തിയാക്കുക.",
+        r1_p4: "പാത്രങ്ങൾ ഉടനടി കഴുകി വയ്ക്കുക.",
+        r1_p5: "എല്ലാ വസ്തുക്കളും അവയുടെ യഥാർത്ഥ സ്ഥാനത്ത് തിരികെ വയ്ക്കുക.",
+        r2_tag: "നിയമം 2",
+        r2_title: "ഒരു റഫ്രിജറേറ്റർ മാത്രം ഉപയോഗിക്കുക",
+        r2_important: "ഇത് വളരെ പ്രധാനപ്പെട്ട ഒരു നിയമമാണ്.",
+        r2_lead: "ഓരോ വ്യക്തിക്കും സ്വന്തം ഭക്ഷണസാധനങ്ങൾ സൂക്ഷിക്കാൻ ഒരു റഫ്രിജറേറ്റർ മാത്രമേ ഉപയോഗിക്കാൻ അനുവാദമുള്ളൂ.",
+        r2_p1: "നിങ്ങൾ ഒരു റഫ്രിജറേറ്റർ മാത്രം തിരഞ്ഞെടുക്കുക.",
+        r2_p2: "നിങ്ങളുടെ എല്ലാ ഭക്ഷണസാധനങ്ങളും ആ ഒരു റഫ്രിജറേറ്ററിൽ മാത്രം സൂക്ഷിക്കുക.",
+        r2_p3: "രണ്ടോ അതിലധികമോ റഫ്രിജറേറ്ററുകളിൽ സാധനങ്ങൾ സൂക്ഷിക്കരുത്.",
+        r2_p4: "ഒന്നിലധികം ഫ്രിഡ്ജുകളിൽ സ്ഥലം അപഹരിക്കരുത്.",
+        r2_p5: "മറ്റുള്ളവർക്ക് ഉപയോഗിക്കാൻ ആവശ്യത്തിന് സ്ഥലം നൽകുക.",
+        r3_tag: "നിയമം 3",
+        r3_title: "ഓരോ ഉപയോഗത്തിന് ശേഷവും ടോയ്‌ലറ്റ് ഫ്ലഷ് ചെയ്യുക",
+        r3_highlight: "ഓരോ ഉപയോഗത്തിന് ശേഷവും ടോയ്‌ലറ്റ് ഫ്ലഷ് ചെയ്യുക.",
+        r3_p1: "ടോയ്‌ലറ്റ് ഉപയോഗിച്ച ഉടൻ തന്നെ എപ്പോഴും ഫ്ലഷ് ചെയ്യുക.",
+        r3_p2: "അടുത്ത വ്യക്തിക്കായി ബാത്ത്റൂം വൃത്തിയായും ശുചിത്വത്തോടെയും സൂക്ഷിക്കുക.",
+        r4_tag: "നിയമം 4",
+        r4_title: "പൊതു ഇടങ്ങളെ ആദരിക്കുക",
+        r4_p1: "അഴുക്കുപാത്രങ്ങൾ സിങ്കിലോ പുറത്തോ ഉപേക്ഷിക്കരുത്.",
+        r4_p2: "ഭക്ഷണാവശിഷ്ടങ്ങൾ അലക്ഷ്യമായി ഇടരുത്.",
+        r4_p3: "പൊതു സ്ഥലങ്ങളിൽ നിങ്ങളുടെ വ്യക്തിഗത സാധനങ്ങൾ ഇട്ടിട്ടു പോകരുത്.",
+        r4_p4: "നിങ്ങൾ ഉപയോഗിച്ചതിനു ശേഷം സ്വയം വൃത്തിയാക്കുക.",
+        r4_p5: "കൂടെ താമസിക്കുന്ന മറ്റുള്ളവരെ ബഹുമാനിക്കുക.",
+        r5_tag: "നിയമം 5",
+        r5_title: "ഉത്തരവാദിത്തമുള്ളവരായിരിക്കുക",
+        r5_p1: "ഈ സൗകര്യങ്ങൾ എല്ലാവരും ഒരുമിച്ച് പങ്കിടുന്നതാണ്.",
+        r5_p2: "വൃത്തിയുള്ളതും ചിട്ടയുള്ളതുമായ ഒരു നല്ല അന്തരീക്ഷം നിലനിർത്താൻ നിങ്ങളുടെ സഹകരണം അത്യാവശ്യമാണ്.",
+        ft_title: "നിങ്ങളുടെ സഹകരണത്തിന് നന്ദി!",
+        ft_sub: "ഈ നിയമങ്ങൾ പാലിക്കുകയും മറ്റുള്ളവരുടെ സൗകര്യം കണക്കിലെടുക്കുകയും ചെയ്യുക.",
+        ft_quote: "“നമ്മുടെ ചെറിയ ശ്രദ്ധ ഒത്തൊരുമിച്ചുള്ള ജീവിതം മനോഹരമാക്കുന്നു.”"
+      },
+      uk: {
+        badge: "БУДЬ ЛАСКА, ЗВЕРНІТЬ УВАГУ",
+        title: "ПРАВИЛА СПІЛЬНОЇ КУХНІ ТА ВАННОЇ КІМНАТИ",
+        subtitle: "Будь ласка, дотримуйтесь цих простих правил, щоб наші спільні зони залишалися чистими, охайними та комфортними для кожного.",
+        selectLanguageLabel: "Оберіть мову:",
+        r1_tag: "ПРАВИЛО 1",
+        r1_title: "ТРИМАЙТЕ КУХНЮ В ЧИСТОТІ",
+        r1_lead: "Кухня завжди повинна бути чистою та охайною.",
+        r1_sublead: "Одразу після завершення приготування їжі:",
+        r1_p1: "Протріть кухонну стільницю.",
+        r1_p2: "Помийте та протріть плиту.",
+        r1_p3: "Очистіть усі поверхні, якими ви користувалися.",
+        r1_p4: "Помийте весь свій посуд.",
+        r1_p5: "Поверніть усі речі на свої місця.",
+        r2_tag: "ПРАВИЛО 2",
+        r2_title: "КОРИСТУЙТЕСЯ ТІЛЬКИ ОДНИМ ХОЛОДИЛЬНИКОМ",
+        r2_important: "Це ДУЖЕ ВАЖЛИВЕ ПРАВИЛО.",
+        r2_lead: "Кожній особі дозволено використовувати ТІЛЬКИ ОДИН ХОЛОДИЛЬНИК для зберігання своїх продуктів та особистих речей.",
+        r2_p1: "Ви повинні обрати ОДИН холодильник.",
+        r2_p2: "Зберігайте всі продукти харчування виключно в цьому одному холодильнику.",
+        r2_p3: "НЕ зберігайте свої речі у двох або більше холодильниках.",
+        r2_p4: "НЕ займайте місце в кількох холодильниках.",
+        r2_p5: "Залишайте достатньо вільного місця для інших мешканців.",
+        r3_tag: "ПРАВИЛО 3",
+        r3_title: "ЗМИВАЙТЕ ТУАЛЕТ ПІСЛЯ КОЖНОГО ВИКОРИСТАННЯ",
+        r3_highlight: "ЗАВЖДИ ЗМИВАЙТЕ ВОДУ В ТУАЛЕТІ ПІСЛЯ КОЖНОГО ВИКОРИСТАННЯ.",
+        r3_p1: "Завжди змивайте воду після користування туалетом.",
+        r3_p2: "Залишайте ванну кімнату чистою та гігієнічною для наступної людини.",
+        r4_tag: "ПРАВИЛО 4",
+        r4_title: "ПОВАЖАЙТЕ СПІЛЬНИЙ ПРОСТІР",
+        r4_p1: "Не залишайте брудний посуд у раковині.",
+        r4_p2: "Не залишайте залишки їжі та сміття.",
+        r4_p3: "Не залишайте особисті речі у спільних зонах.",
+        r4_p4: "Завжди прибирайте за собою.",
+        r4_p5: "Поважайте особистий комфорт інших сусідів.",
+        r5_tag: "ПРАВИЛО 5",
+        r5_title: "БУДЬТЕ ВІДПОВІДАЛЬНИМИ",
+        r5_p1: "Ці зручності є спільними для всіх мешканців.",
+        r5_p2: "Ваша співпраця є ключовою для підтримки чистого, організованого та затишного дому.",
+        ft_title: "ДЯКУЄМО ЗА ВАШЕ РОЗУМІННЯ ТА СПІВПРАЦЮ!",
+        ft_sub: "Будь ласка, поважайте ці правила та дбайте про затишок оточуючих.",
+        ft_quote: "«Турбота про спільний дім робить життя комфортнішим для кожного.»"
+      },
+      pl: {
+        badge: "PROSIMY O UWAGĘ",
+        title: "ZASADY KORZYSTANIA ZE WSPÓLNEJ KUCHNI I ŁAZIENKI",
+        subtitle: "Prosimy o przestrzeganie tych prostych zasad, aby nasza wspólna przestrzeń była zawsze czysta, higieniczna i komfortowa dla wszystkich.",
+        selectLanguageLabel: "Wybierz język:",
+        r1_tag: "ZASADA 1",
+        r1_title: "UTRZYMUJ KUCHNIĘ W CZYSTOŚCI",
+        r1_lead: "Dbaj o czystość i porządek w kuchni przez cały czas.",
+        r1_sublead: "Natychmiast po zakończeniu gotowania:",
+        r1_p1: "Wytrzyj blat kuchenny.",
+        r1_p2: "Umyj kuchenkę / płytę grzewczą.",
+        r1_p3: "Wyczyść wszystkie powierzchnie, z których korzystałeś.",
+        r1_p4: "Umyj swoje naczynia.",
+        r1_p5: "Odłóż wszystkie rzeczy na swoje miejsce.",
+        r2_tag: "ZASADA 2",
+        r2_title: "KORZYSTAJ TYLKO Z JEDNEJ LODÓWKI",
+        r2_important: "To jest BARDZO WAŻNA ZASADA.",
+        r2_lead: "Każda osoba może korzystać TYLKO Z JEDNEJ LODÓWKI do przechowywania żywności i rzeczy osobistych.",
+        r2_p1: "Musisz wybrać JEDNĄ lodówkę.",
+        r2_p2: "Przechowuj całe jedzenie i rzeczy wyłącznie w tej jednej lodówce.",
+        r2_p3: "NIE przechowuj swoich produktów w dwóch lub więcej lodówkach.",
+        r2_p4: "NIE zajmuj miejsca w kilku lodówkach naraz.",
+        r2_p5: "Zostaw odpowiednią ilość miejsca dla pozostałych mieszkańców.",
+        r3_tag: "ZASADA 3",
+        r3_title: "SPŁUKUJ TOALETĘ PO KAŻDYM UŻYCIU",
+        r3_highlight: "SPŁUKUJ TOALETĘ PO KAŻDYM UŻYCIU.",
+        r3_p1: "Zawsze spłukuj wodę w toalecie po każdym skorzystaniu.",
+        r3_p2: "Zostaw łazienkę czystą i higieniczną dla kolejnej osoby.",
+        r4_tag: "ZASADA 4",
+        r4_title: "SZANUJ WSPÓLNĄ PRZESTRZEŃ",
+        r4_p1: "Nie zostawiaj brudnych naczyń w zlewie.",
+        r4_p2: "Nie zostawiaj resztek jedzenia i odpadów.",
+        r4_p3: "Nie zostawiaj rzeczy osobistych w miejscach wspólnych.",
+        r4_p4: "Zawsze sprzątaj po sobie.",
+        r4_p5: "Szanuj spokój i komfort innych współlokatorów.",
+        r5_tag: "ZASADA 5",
+        r5_title: "BĄDŹ ODPOWIEDZIALNY",
+        r5_p1: "Te pomieszczenia są wspólną własnością nas wszystkich.",
+        r5_p2: "Twoja współpraca jest kluczem do zachowania czystego, zorganizowanego i przyjaznego środowiska do życia.",
+        ft_title: "DZIĘKUJEMY ZA WSPÓŁPRACĘ!",
+        ft_sub: "Przestrzegaj powyższych reguł i dbaj o wygodę innych mieszkańców.",
+        ft_quote: "„Odrobina troski sprawia, że wspólne mieszkanie jest przyjemnością.”"
+      },
+      fil: {
+        badge: "PAUNAWA PO SA LAHAT",
+        title: "MGA TUNTUNIN SA PINAGSALUHANG KUSINA AT BANYO",
+        subtitle: "Mangyaring sundin ang mga simpleng patakarang ito upang manatiling malinis, maayos, at komportable ang ating tahanan para sa lahat.",
+        selectLanguageLabel: "Pumili ng Wika:",
+        r1_tag: "TUNTUNIN 1",
+        r1_title: "PANATILIHING MALINIS ANG KUSINA",
+        r1_lead: "Panatilihing malinis at maayos ang kusina sa lahat ng oras.",
+        r1_sublead: "Kaagad pagkatapos magluto:",
+        r1_p1: "Punasan at linisin ang kitchen countertop.",
+        r1_p2: "Linisin ang kalan pagkatapos gamitin.",
+        r1_p3: "Linisin ang lahat ng gamit at lugar na iyong ginamit.",
+        r1_p4: "Hugasan kaagad ang iyong mga plato at kaldero.",
+        r1_p5: "Ibalik ang lahat ng gamit sa tamang lagayan.",
+        r2_tag: "TUNTUNIN 2",
+        r2_title: "GUMAMIT LAMANG NG ISANG REPRIDYEREYTOR",
+        r2_important: "Ito ay NAPAKAHALAGANG PATAKARAN.",
+        r2_lead: "Ang bawat tao ay pinapayagang gumamit ng ISANG REPRIDYEREYTOR LAMANG para sa kanilang pagkain at gamit.",
+        r2_p1: "Pumili lamang ng ISANG refrigerator.",
+        r2_p2: "Ilagay ang lahat ng iyong pagkain at gamit sa napiling ref lamang.",
+        r2_p3: "HUWAG maglagay ng gamit sa dalawa o higit pang refrigerator.",
+        r2_p4: "HUWAG kumuha ng espasyo sa maraming refrigerator.",
+        r2_p5: "Magtira ng sapat na espasyo para sa ibang kasamahan sa bahay.",
+        r3_tag: "TUNTUNIN 3",
+        r3_title: "I-FLUSH ANG INIDORO PAGKATAPOS GAMITIN",
+        r3_highlight: "PALAGIANG I-FLUSH ANG INIDORO PAGKATAPOS NG BAWAT GAMIT.",
+        r3_p1: "Ugaliing mag-flush ng palikuran sa bawat paggamit.",
+        r3_p2: "Iwanang malinis, mabango, at presentable ang banyo para sa susunod na gagamit.",
+        r4_tag: "TUNTUNIN 4",
+        r4_title: "IGALANG ANG MGA PINAGSALUHANG LUGAR",
+        r4_p1: "Huwag mag-iwan ng maruruming pinggan sa lababo.",
+        r4_p2: "Huwag magkalat ng tirang pagkain o basura.",
+        r4_p3: "Huwag iwanan ang mga personal na gamit sa mga pampublikong espasyo.",
+        r4_p4: "Palaging maglinis pagkatapos ng sariling gawain.",
+        r4_p5: "Igalang at pahalagahan ang ibang kasama sa bahay.",
+        r5_tag: "TUNTUNIN 5",
+        r5_title: "MAGING RESPONSIBLE",
+        r5_p1: "Ang mga pasilidad na ito ay ginagamit at pinagsasaluhan nating lahat.",
+        r5_p2: "Ang iyong pakikipagtulungan ay napakahalaga upang mapanatili ang isang malinis, organisado, at payapang tirahan.",
+        ft_title: "MARAMING SALAMAT SA INYONG PAKIKIPAGTULUNGAN!",
+        ft_sub: "Mangyaring igalang ang mga patakarang ito at alalahanin ang kapakanan ng bawat isa.",
+        ft_quote: "“Ang kaunting malasakit ay nagdudulot ng mas masayang samahan.”"
+      }
+    };
+
+    // Apply translations instantly
+    function switchLanguage(lang) {
+      const selected = translations[lang] || translations.en;
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.getAttribute("data-i18n");
+        if (selected[key]) {
+          element.textContent = selected[key];
+        }
+      });
+      document.documentElement.lang = lang === 'es_CO' ? 'es' : lang;
+    }
+
+    // Language select listener
+    const selectEl = document.getElementById("languageSelect");
+    selectEl.addEventListener("change", (e) => {
+      switchLanguage(e.target.value);
+    });
+
+    // Initialize English by default on load
+    window.onload = function() {
+      switchLanguage('en');
+    };
+  </script>
+</body>
+</html>
